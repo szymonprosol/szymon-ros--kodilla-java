@@ -60,5 +60,6 @@ public class CollectionTestSuite {
         System.out.println("Testing not empty list.");
         //Then
         Assertions.assertEquals(8, result.size());
+        Assertions.assertEquals(List.of(2,4,6,8,6,8,8,8), result);
     }
 }

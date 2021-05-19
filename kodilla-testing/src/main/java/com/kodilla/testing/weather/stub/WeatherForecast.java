@@ -32,7 +32,7 @@ public class WeatherForecast {
     }
 
     public double calculateMadianTemperatures() {
-        double median = 0, average = 0;
+        double median = 0;
         double[] array = new double[temperatures.getTemperatures().size()];
         int i = 0;
 
@@ -43,6 +43,7 @@ public class WeatherForecast {
         }
         Arrays.sort(array);
         if (array.length % 2 == 0) {
+            double average;
             average = array[array.length / 2] + array[(array.length / 2) - 1];
             median = average / 2.0;
         } else {

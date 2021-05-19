@@ -7,11 +7,13 @@ public class LibraryUser {
     private String firstname;
     private String lastname;
     private String peselId;
+    private int borrowedBooksNumber;
 
-    public LibraryUser(String firstname, String lastname, String peselId) {
+    public LibraryUser(String firstname, String lastname, String peselId, int borrowedBooksNumber) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.peselId = peselId;
+        this.borrowedBooksNumber = borrowedBooksNumber;
     }
 
     public String getFirstname() {
@@ -38,16 +40,24 @@ public class LibraryUser {
         this.peselId = peselId;
     }
 
+    public int getBorrowedBooksNumber() {
+        return borrowedBooksNumber;
+    }
+
+    public void setBorrowedBooksNumber(int books) {
+        this.borrowedBooksNumber = borrowedBooksNumber;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         LibraryUser that = (LibraryUser) o;
-        return Objects.equals(firstname, that.firstname) && Objects.equals(lastname, that.lastname) && Objects.equals(peselId, that.peselId);
+        return Objects.equals(firstname, that.firstname) && Objects.equals(lastname, that.lastname) && Objects.equals(peselId, that.peselId) && Objects.equals(borrowedBooksNumber, that.borrowedBooksNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstname, lastname, peselId);
+        return Objects.hash(firstname, lastname, peselId, borrowedBooksNumber);
     }
 }

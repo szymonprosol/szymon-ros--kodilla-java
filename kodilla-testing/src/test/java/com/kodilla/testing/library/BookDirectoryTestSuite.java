@@ -89,12 +89,17 @@ class BookDirectoryTestSuite {
     @Test
     void listBooksInHandsOf() {
         // Given
-        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        LibraryUser user0 = new LibraryUser("Jan", "Kowalski","73060704667", 0);
+        LibraryUser user1 = new LibraryUser("Jan", "Kowalski","73060704667", 1);
+        LibraryUser user5 = new LibraryUser("Jan", "Kowalski","73060704667", 5);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         // When
-        List<Book> theListOfBooks10 = bookLibrary.listBooksWithCondition("An");
+        List<Book> theListOf0BooksInHandsOfUser0 = bookLibrary.listBooksInHandsOf(user0);
+        List<Book> theListOf0BooksInHandsOfUser1 = bookLibrary.listBooksInHandsOf(user1);
+        List<Book> theListOf0BooksInHandsOfUser5 = bookLibrary.listBooksInHandsOf(user5);
         // Then
-        assertEquals(0, theListOfBooks10.size());
-        verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
+        assertEquals(0, theListOf0BooksInHandsOfUser0.size());
+        assertEquals(1, theListOf0BooksInHandsOfUser1.size());
+        assertEquals(5, theListOf0BooksInHandsOfUser5.size());
     }
 }

@@ -18,6 +18,7 @@ public class OddNumbersExterminator {
                 exterminatedNumbers++;
             }
         }
+        System.out.println("Ilość usuniętych liczb: " + exterminatedNumbers);
         return resultNumbers;
     }
 }

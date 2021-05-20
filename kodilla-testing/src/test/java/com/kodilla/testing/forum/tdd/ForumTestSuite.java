@@ -30,10 +30,14 @@ import org.junit.jupiter.api.*;
     @DisplayName("Tests for posts")
     class TestPosts {
 
+        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        ForumPost thePost = new ForumPost("Hello everyone, " +
+                "this is my first contribution here!", "mrsmith");
+
         @Test
         void testAddPost() {
             //Given
-            ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+
             //When
             forumUser.addPost("mrsmith",
                     "Hello everyone, this is my first contribution here!");
@@ -44,9 +48,7 @@ import org.junit.jupiter.api.*;
         @Test
         void testGetPost() {
             //Given
-            ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
-            ForumPost thePost = new ForumPost("Hello everyone, " +
-                    "this is my first contribution here!", "mrsmith");
+
             forumUser.addPost(thePost.getAuthor(), thePost.getPostBody());
             //When
             ForumPost retrievedPost;
@@ -58,9 +60,7 @@ import org.junit.jupiter.api.*;
         @Test
         void testRemovePostNotExisting() {
             //Given
-            ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
-            ForumPost thePost = new ForumPost("Hello everyone, " +
-                    "this is my first contribution here!", "mrsmith");
+
             //When
             boolean result = forumUser.removePost(thePost);
             //Then
@@ -70,9 +70,6 @@ import org.junit.jupiter.api.*;
         @Test
         void testRemovePost() {
             //Given
-            ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
-            ForumPost thePost = new ForumPost("Hello everyone, " +
-                    "this is my first contribution here!", "mrsmith");
             forumUser.addPost(thePost.getAuthor(), thePost.getPostBody());
             //When
             boolean result = forumUser.removePost(thePost);
@@ -86,12 +83,14 @@ import org.junit.jupiter.api.*;
     @DisplayName("Tests for comments")
     class TestComments {
 
+        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        ForumPost thePost = new ForumPost("Hello everyone, " +
+                "this is my first contribution here!", "mrsmith");
+
         @Test
         void testAddComment() {
             //Given
-            ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
-            ForumPost thePost = new ForumPost("Hello everyone, " +
-                    "this is my first contribution here!", "mrsmith");
+
             //When
             forumUser.addComment(thePost, "mrsmith", "Thank you for all good words!");
             //Then
@@ -101,9 +100,6 @@ import org.junit.jupiter.api.*;
         @Test
         void testGetComment() {
             //Given
-            ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
-            ForumPost thePost = new ForumPost("Hello everyone, " +
-                    "this is my first contribution here!", "mrsmith");
             ForumComment theComment = new ForumComment(thePost, "mrsmith",
                     "Thank you for all good words!");
             forumUser.addComment(thePost, theComment.getAuthor(),
@@ -117,9 +113,6 @@ import org.junit.jupiter.api.*;
         @Test
         void testRemoveCommentNotExisting() {
             //Given
-            ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
-            ForumPost thePost = new ForumPost("Hello everyone, " +
-                    "this is my first contribution here!", "mrsmith");
             ForumComment theComment = new ForumComment(thePost, "mrsmith",
                     "Thank you for all good words!");
             //When
@@ -131,9 +124,6 @@ import org.junit.jupiter.api.*;
         @Test
         void testRemoveComment() {
             //Given
-            ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
-            ForumPost thePost = new ForumPost("Hello everyone, " +
-                    "this is my first contribution here!", "mrsmith");
             ForumComment theComment = new ForumComment(thePost, "mrsmith",
                     "Thank you for all good words!");
             forumUser.addComment(thePost, theComment.getAuthor(),

@@ -33,7 +33,7 @@ public class ShapeCollector {
     }
 
     public String showFigures() {
-        String figures = null;
+        String figures = "";
         if(shapes.size() > 0) {
             for (int i = 0; i < shapes.size(); i++) {
                 if(i == 0) {
@@ -42,8 +42,7 @@ public class ShapeCollector {
                     figures += ", " + shapes.get(i).getShapeName();
                 }
             }
-            return figures;
         }
-        return null;
+        return figures;
     }
 }

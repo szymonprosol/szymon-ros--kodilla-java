@@ -37,7 +37,7 @@ import org.junit.jupiter.api.*;
         @Test
         void testAddPost() {
             //Given
-
+            ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
             //When
             forumUser.addPost("mrsmith",
                     "Hello everyone, this is my first contribution here!");
@@ -48,7 +48,6 @@ import org.junit.jupiter.api.*;
         @Test
         void testGetPost() {
             //Given
-
             forumUser.addPost(thePost.getAuthor(), thePost.getPostBody());
             //When
             ForumPost retrievedPost;
@@ -60,7 +59,7 @@ import org.junit.jupiter.api.*;
         @Test
         void testRemovePostNotExisting() {
             //Given
-
+          
             //When
             boolean result = forumUser.removePost(thePost);
             //Then

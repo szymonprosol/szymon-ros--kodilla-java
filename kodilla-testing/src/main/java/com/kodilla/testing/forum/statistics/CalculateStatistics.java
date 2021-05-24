@@ -10,9 +10,15 @@ public class CalculateStatistics {
         usersQuantity = statistics.usersNames().size();
         postsQuantity = statistics.postsCount();
         commentsQuantity = statistics.commentsCount();
-        averagePostsQuantityPerUser = postsQuantity/usersQuantity;
-        averageCommentsQuantityPerUser = commentsQuantity/usersQuantity;
-        averageCommentsQuantityPerPost = commentsQuantity/postsQuantity;
+        if (usersQuantity != 0) {
+            averagePostsQuantityPerUser = (double) postsQuantity / (double) usersQuantity;
+            averageCommentsQuantityPerUser = (double) commentsQuantity / (double) usersQuantity;
+        } else {
+            averagePostsQuantityPerUser = 0;
+            averageCommentsQuantityPerUser = 0;
+        }
+        if (postsQuantity != 0) averageCommentsQuantityPerPost = (double) commentsQuantity / (double) postsQuantity;
+        else averageCommentsQuantityPerPost = 0;
     }
 
     public int getUsersQuantity() {

@@ -16,6 +16,7 @@ import static org.mockito.Mockito.when;
 public class CalculateStatisticsTestSuit {
 
     private static int testCounter = 0;
+    CalculateStatistics calculateStatistics = new CalculateStatistics();
 
     @BeforeAll
     public static void beforeAllTests() {
@@ -50,7 +51,6 @@ public class CalculateStatisticsTestSuit {
         when(statisticsMock.postsCount()).thenReturn(postQuantity);
         when(statisticsMock.commentsCount()).thenReturn(commentsQuantity);
 
-        CalculateStatistics calculateStatistics = new CalculateStatistics();
         calculateStatistics.calculateAdvStatistics(statisticsMock);
         //When
         int quantityOfPosts = calculateStatistics.getPostsQuantity();
@@ -78,7 +78,6 @@ public class CalculateStatisticsTestSuit {
         when(statisticsMock.postsCount()).thenReturn(postQuantity);
         when(statisticsMock.commentsCount()).thenReturn(commentsQuantity);
 
-        CalculateStatistics calculateStatistics = new CalculateStatistics();
         calculateStatistics.calculateAdvStatistics(statisticsMock);
         //When
         int quantityOfPosts = calculateStatistics.getPostsQuantity();
@@ -106,7 +105,6 @@ public class CalculateStatisticsTestSuit {
         when(statisticsMock.postsCount()).thenReturn(postQuantity);
         when(statisticsMock.commentsCount()).thenReturn(commentsQuantity);
 
-        CalculateStatistics calculateStatistics = new CalculateStatistics();
         calculateStatistics.calculateAdvStatistics(statisticsMock);
         //When
         int quantityOfComments = calculateStatistics.getCommentsQuantity();
@@ -134,7 +132,6 @@ public class CalculateStatisticsTestSuit {
         when(statisticsMock.postsCount()).thenReturn(postQuantity);
         when(statisticsMock.commentsCount()).thenReturn(commentsQuantity);
 
-        CalculateStatistics calculateStatistics = new CalculateStatistics();
         calculateStatistics.calculateAdvStatistics(statisticsMock);
         //When
         int quantityOfPosts = calculateStatistics.getPostsQuantity();
@@ -164,7 +161,6 @@ public class CalculateStatisticsTestSuit {
         when(statisticsMock.postsCount()).thenReturn(postQuantity);
         when(statisticsMock.commentsCount()).thenReturn(commentsQuantity);
 
-        CalculateStatistics calculateStatistics = new CalculateStatistics();
         calculateStatistics.calculateAdvStatistics(statisticsMock);
         //When
         int quantityOfPosts = calculateStatistics.getPostsQuantity();
@@ -194,7 +190,6 @@ public class CalculateStatisticsTestSuit {
         when(statisticsMock.postsCount()).thenReturn(postQuantity);
         when(statisticsMock.commentsCount()).thenReturn(commentsQuantity);
 
-        CalculateStatistics calculateStatistics = new CalculateStatistics();
         calculateStatistics.calculateAdvStatistics(statisticsMock);
         //When
         int quantityOfUsers = calculateStatistics.getUsersQuantity();
@@ -222,7 +217,6 @@ public class CalculateStatisticsTestSuit {
         when(statisticsMock.postsCount()).thenReturn(postQuantity);
         when(statisticsMock.commentsCount()).thenReturn(commentsQuantity);
 
-        CalculateStatistics calculateStatistics = new CalculateStatistics();
         calculateStatistics.calculateAdvStatistics(statisticsMock);
         //When
         int quantityOfUsers = calculateStatistics.getUsersQuantity();

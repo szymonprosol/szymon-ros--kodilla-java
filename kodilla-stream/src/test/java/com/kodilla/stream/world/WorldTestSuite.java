@@ -33,7 +33,7 @@ public class WorldTestSuite {
         continents.add(new Continent("Ameryka Północna", countriesOfNorthAmerica));
         World world = new World(continents);
         //When
-        BigDecimal peopleQuantity = new BigDecimal(String.valueOf(world.getPeopleQuantity()));
+        BigDecimal peopleQuantity = world.getPeopleQuantity();
         //Then
         BigDecimal expectedSand = new BigDecimal("12635807293391531055663999");
         assertEquals(expectedSand, peopleQuantity);

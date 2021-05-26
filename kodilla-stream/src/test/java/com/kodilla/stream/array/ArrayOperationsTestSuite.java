@@ -3,7 +3,6 @@ package com.kodilla.stream.array;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.OptionalDouble;
 import java.util.Random;
 
 public class ArrayOperationsTestSuite {
@@ -17,8 +16,8 @@ public class ArrayOperationsTestSuite {
         double expectedAverage = 0;
         double sum = 0;
         //When
-        for(int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(21 + 1);
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(20) + 1;
             sum += array[i];
         }
         expectedAverage = sum / 20;

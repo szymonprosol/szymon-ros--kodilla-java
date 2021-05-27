@@ -6,6 +6,7 @@ import java.util.List;
 public final class BookDirectory {
 
     private final List<Book> theBookList = new ArrayList<>();
+
     public BookDirectory() {
         theBookList.add(new Book("Dylan Murphy", "Wolf of the mountain",
                 2003, "0001"));

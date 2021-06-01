@@ -9,11 +9,12 @@ public class Rps {
     Scanner scanner = new Scanner(System.in);
     Map<Integer, User> gamers = new HashMap<>();
     Choice choice = new Choice();
+    Computer computer = new Computer();
     private int gamersQuantity;
     private int wonGamesQuantity;
     private boolean end = false;
 
-    public void hello() {
+    public void printHello() {
         System.out.println("Życzę miłej rozgrywki!\n");
     }
 
@@ -33,8 +34,7 @@ public class Rps {
         if (gamersQuantity <= 1) {
             System.out.println("Zagrasz z komputerem!");
             gamersQuantity = 1;
-        }
-        if (gamersQuantity > 1) gamersQuantity = 2;
+        } else gamersQuantity = 2;
         System.out.println();
     }
 
@@ -68,7 +68,7 @@ public class Rps {
                 "- klawisz 5 - zagranie \"SPOCK\"\n");
     }
 
-    public void getRoundWinner(char firstPlayersMove, char secondPlayersMove) {
+    public void roundWinner(char firstPlayersMove, char secondPlayersMove) {
         if (firstPlayersMove != secondPlayersMove) {
             if ((firstPlayersMove == 1 && secondPlayersMove == 2) || (firstPlayersMove == 2 && secondPlayersMove == 3) || (firstPlayersMove == 3 && secondPlayersMove == 1)
                     || (firstPlayersMove == 4 && secondPlayersMove == 1) || (firstPlayersMove == 5 && secondPlayersMove == 4) || (firstPlayersMove == 3 && secondPlayersMove == 5)
@@ -88,7 +88,7 @@ public class Rps {
         System.out.println();
     }
 
-    public String getGameWinner() {
+    public String gameWinner() {
         int firstUser = gamers.get(1).getWonGamesQuantity();
         int secondUser = gamers.get(2).getWonGamesQuantity();
 
@@ -136,15 +136,39 @@ public class Rps {
         }
     }
 
-    public int getGamersQuantity() {
-        return gamersQuantity;
-    }
+    public void playGame() {
+        char firstPlayersMove, secondPlayersMove;
 
-    public int getWonGamesQuantity() {
-        return wonGamesQuantity;
-    }
-
-    public boolean isEnd() {
-        return end;
+        printHello();
+        setGamersQuantity();
+        setUsers();
+        setWonGamesQuantity();
+        gameInstruction();
+        while (!end) {
+            while (wonGamesQuantity > 0) {
+                System.out.println("Ruch gracza nr: 1");
+                firstPlayersMove = (char) scanner.nextInt();
+                if (firstPlayersMove == 1 || firstPlayersMove == 2 || firstPlayersMove == 3 || firstPlayersMove == 4 || firstPlayersMove == 5) {
+                    System.out.print("Gracz " + gamers.get(1).getUserID());
+                    choice.getChoice(firstPlayersMove);
+                    if (gamersQuantity == 1) {
+                        secondPlayersMove = computer.getMove();
+                        System.out.print("Gracz " + gamers.get(2).getUserID());
+                        choice.getChoice(secondPlayersMove);
+                    } else {
+                        System.out.println("Ruch gracza nr: 2");
+                        secondPlayersMove = (char) scanner.nextInt();
+                        System.out.print("Gracz " + gamers.get(2).getUserID());
+                        choice.getChoice(secondPlayersMove);
+                    }
+                    roundWinner(firstPlayersMove, secondPlayersMove);
+                    if (gamers.get(1).getWonGamesQuantity() == wonGamesQuantity || gamers.get(2).getWonGamesQuantity() == wonGamesQuantity) {
+                        break;
+                    }
+                } else System.out.println("Niepoprawna komenda!");
+            }
+            System.out.println(gameWinner());
+            quitGameOrNewGame();
+        }
     }
 }

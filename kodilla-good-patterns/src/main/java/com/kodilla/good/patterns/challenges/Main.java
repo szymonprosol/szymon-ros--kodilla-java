@@ -2,8 +2,9 @@ package com.kodilla.good.patterns.challenges;
 
 public class Main {
     public static void main(String[] args) {
-        MovieStore m = new MovieStore();
-        m.getMovies();
+        MovieStore moviestore = new MovieStore();
+        System.out.println(moviestore.booksTitlesWithTranslationsText());
     }
 
 }
+

@@ -15,7 +15,7 @@ public class ProductOrderService {
     }
 
     public SalesDto process(final SaleRequest saleRequest) {
-        boolean isSaled = salesService.sale(saleRequest.getUser(), saleRequest.getUser().getUserPrice(), saleRequest.getPrice(), saleRequest.getIsAvailable());
+        boolean isSaled = salesService.sale(saleRequest.getUser(), saleRequest.getPrice(), saleRequest.getIsAvailable());
         if (isSaled) {
             informationService.inform(saleRequest.getUser());
             salesRepository.saleCreate(saleRequest.getUser());

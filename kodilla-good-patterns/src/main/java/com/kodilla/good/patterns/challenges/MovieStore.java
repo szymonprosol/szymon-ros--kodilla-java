@@ -26,10 +26,10 @@ public class MovieStore {
         return booksTitlesWithTranslations;
     }
 
-    public String booksTitlesWithTranslationsText() {
+    public String getBooksTitles() {
 
         return getMovies().values()
                 .stream().flatMap(Collection::stream)
-                .collect(Collectors.joining("!","",""));
+                .collect(Collectors.joining("!"));
     }
 }

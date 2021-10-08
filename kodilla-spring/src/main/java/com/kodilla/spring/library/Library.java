@@ -14,9 +14,6 @@ public final class Library {
         this.libraryDbController = libraryDbController;
     }
 
-    public Library() {
-    }
-
     public void saveToDb() {
         libraryDbController.saveData();
     }

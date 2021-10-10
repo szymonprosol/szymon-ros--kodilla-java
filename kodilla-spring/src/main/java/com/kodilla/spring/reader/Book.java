@@ -2,7 +2,7 @@ package com.kodilla.spring.reader;
 
 public final class Book {
 
-    final String title;
+    private final String title;
 
     public Book(final String title) {
         this.title = title;

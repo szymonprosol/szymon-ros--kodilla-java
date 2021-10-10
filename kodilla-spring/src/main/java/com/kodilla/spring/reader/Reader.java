@@ -2,13 +2,13 @@ package com.kodilla.spring.reader;
 
 public final class Reader {
 
-    final Book theBook;
+    private final Book book;
 
     public Reader(final Book theBook) {
-        this.theBook = theBook;
+        this.book = theBook;
     }
 
-    public void read() {
-        System.out.println("Reading: " + theBook.getTitle());
+    public String read() {
+        return "Reading: " + book.getTitle();
     }
 }

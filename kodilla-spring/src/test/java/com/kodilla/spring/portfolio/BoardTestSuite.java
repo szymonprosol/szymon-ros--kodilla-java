@@ -17,16 +17,16 @@ public class BoardTestSuite {
         Board board = context.getBean(Board.class);
 
         //When
-        board.toDoList.tasks.add("Zrobić zakupy");
-        board.inProgressList.tasks.add("Posprzątać garaż");
-        board.doneList.tasks.add("Zapłacić rachunki");
+        board.getToDoList().getTasks().add("Zrobić zakupy");
+        board.getInProgressList().getTasks().add("Posprzątać garaż");
+        board.getDoneList().getTasks().add("Zapłacić rachunki");
 
         //Then
-        assertEquals("Zrobić zakupy", board.toDoList.tasks.get(0));
-        assertEquals("Posprzątać garaż", board.inProgressList.tasks.get(0));
-        assertEquals("Zapłacić rachunki", board.doneList.tasks.get(0));
-        System.out.println(board.toDoList.tasks.get(0) + "\n" +
-                board.inProgressList.tasks.get(0) + "\n" +
-                board.doneList.tasks.get(0));
+        assertEquals("Zrobić zakupy", board.getToDoList().getTasks().get(0));
+        assertEquals("Posprzątać garaż", board.getInProgressList().getTasks().get(0));
+        assertEquals("Zapłacić rachunki", board.getDoneList().getTasks().get(0));
+        System.out.println(board.getToDoList().getTasks().get(0) + "\n" +
+                board.getInProgressList().getTasks().get(0) + "\n" +
+                board.getDoneList().getTasks().get(0));
     }
 }

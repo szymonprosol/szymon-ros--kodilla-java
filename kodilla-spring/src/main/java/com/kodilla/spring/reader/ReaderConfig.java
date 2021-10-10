@@ -12,7 +12,7 @@ public class ReaderConfig {
 
     @Autowired
     @Qualifier("book1")
-    Book book;
+    private Book book;
 
     @Bean
     public Reader getReader() {

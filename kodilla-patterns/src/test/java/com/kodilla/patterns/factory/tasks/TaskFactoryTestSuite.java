@@ -15,7 +15,7 @@ public class TaskFactoryTestSuite {
         Task shoppingTask = taskFactory.makeTask(TaskFactory.SHOPPINGTASK);
 
         //Then
-        assertEquals("Zakupy w Lidlu", shoppingTask.getTaskName(), (String) null);
+        assertEquals("Zakupy w Lidlu", shoppingTask.getTaskName());
         assertEquals(false, shoppingTask.isTaskExecuted());
     }
 
@@ -29,7 +29,7 @@ public class TaskFactoryTestSuite {
         paintingTask.executeTask();
 
         //Then
-        assertEquals("Malowanie obrazu", paintingTask.getTaskName(), (String) null);
+        assertEquals("Malowanie obrazu", paintingTask.getTaskName());
         assertEquals(true, paintingTask.isTaskExecuted());
     }
 
@@ -43,7 +43,7 @@ public class TaskFactoryTestSuite {
         drivingTask.executeTask();
 
         //Then
-        assertEquals("Odwiedziny", drivingTask.getTaskName(), (String) null);
+        assertEquals("Odwiedziny", drivingTask.getTaskName());
         assertEquals(true, drivingTask.isTaskExecuted());
     }
 }

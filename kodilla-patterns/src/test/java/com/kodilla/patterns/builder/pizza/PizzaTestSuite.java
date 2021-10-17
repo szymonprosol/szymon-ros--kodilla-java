@@ -21,5 +21,7 @@ class PizzaTestSuite {
         int howManyIngredients = pizza.getIngredients().size();
         //Then
         assertEquals(3, howManyIngredients);
+        assertEquals("Thin", pizza.getBottom());
+        assertEquals("Spicy", pizza.getSauce());
     }
 }

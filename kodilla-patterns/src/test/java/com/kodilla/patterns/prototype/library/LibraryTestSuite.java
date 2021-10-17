@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class LibraryTestSuite {
 
     @Test
-    void testGetBooks() {
+    void testGetBooks() throws CloneNotSupportedException {
         //given
         //creating the Library
         Library library = new Library("My Library number 1");

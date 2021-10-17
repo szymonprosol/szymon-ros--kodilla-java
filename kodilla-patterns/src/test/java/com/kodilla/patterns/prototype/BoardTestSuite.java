@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BoardTestSuite {
 
     @Test
-    void testToString() {
+    void testToString() throws CloneNotSupportedException {
         //given
         //creating the TasksList for todos
         TasksList listToDo = new TasksList("To Do Tasks");

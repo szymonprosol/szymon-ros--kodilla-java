@@ -36,21 +36,13 @@ class BoardTestSuite {
 
         //making a shallow copy of object board
         Board clonedBoard = null;
-        try {
-            clonedBoard = board.shallowCopy();
-            clonedBoard.setName("Project number 2");
-        } catch (CloneNotSupportedException e) {
-            System.out.println(e);
-        }
+        clonedBoard = board.shallowCopy();
+        clonedBoard.setName("Project number 2");
 
         //making a deep copy of object board
         Board deepClonedBoard = null;
-        try {
-            deepClonedBoard = board.deepCopy();
-            deepClonedBoard.setName("Project number 3");
-        } catch (CloneNotSupportedException e) {
-            System.out.println(e);
-        }
+        deepClonedBoard = board.deepCopy();
+        deepClonedBoard.setName("Project number 3");
 
         //When
         board.getLists().remove(listToDo);

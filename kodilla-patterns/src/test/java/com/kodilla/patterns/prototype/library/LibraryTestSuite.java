@@ -20,21 +20,13 @@ public class LibraryTestSuite {
 
         //making a shallow copy of object library
         Library clonedLibrary = null;
-        try {
-            clonedLibrary = library.shallowCopy();
-            clonedLibrary.setName("My Library number 2");
-        } catch (CloneNotSupportedException e) {
-            System.out.println(e);
-        }
+        clonedLibrary = library.shallowCopy();
+        clonedLibrary.setName("My Library number 2");
 
         //making a deep copy of object library
         Library deepClonedLibrary = null;
-        try {
-            deepClonedLibrary = library.deepCopy();
-            deepClonedLibrary.setName("My Library number 3");
-        } catch (CloneNotSupportedException e) {
-            System.out.println(e);
-        }
+        deepClonedLibrary = library.deepCopy();
+        deepClonedLibrary.setName("My Library number 3");
 
         //When
         Book temp = new Book("Book number 10", "Author number 10", LocalDate.of(2010,01,01));

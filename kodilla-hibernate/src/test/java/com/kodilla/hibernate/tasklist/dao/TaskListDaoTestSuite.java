@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
@@ -28,6 +29,7 @@ public class TaskListDaoTestSuite {
         // Then
         List<TaskList> readTask = taskListDao.findByListName(LISTNAME);
         assertTrue(readTask.size() == 1);
+        assertEquals("My first list", taskList.getListName());
 
         // Clenup
         taskListDao.deleteByListName(LISTNAME);

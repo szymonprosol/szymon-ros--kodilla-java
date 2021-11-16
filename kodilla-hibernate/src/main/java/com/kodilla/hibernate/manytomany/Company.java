@@ -6,6 +6,11 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQuery(
+        name = "Company.retrieveBy3FirstLetters",
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE :ZNAKI '%'",
+        resultClass = Company.class
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {

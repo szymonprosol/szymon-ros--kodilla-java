@@ -4,6 +4,7 @@ public final class SimpleProduct {
 
     private final String productName;
     private final double productPrice;
+    public int[] aaa = new int[0];
 
     public SimpleProduct(final String productName, final double productPrice) {
         this.productName = productName;

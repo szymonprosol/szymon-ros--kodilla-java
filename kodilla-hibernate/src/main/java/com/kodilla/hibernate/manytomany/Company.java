@@ -8,7 +8,7 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.retrieveBy3FirstLetters",
-        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE :ZNAKI '%'",
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE :CHARS '%'",
         resultClass = Company.class
 )
 @Entity

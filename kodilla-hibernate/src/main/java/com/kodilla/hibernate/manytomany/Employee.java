@@ -10,6 +10,11 @@ import java.util.List;
         name = "Employee.retrieveByLastname",
         query = "FROM Employee WHERE lastname = :LASTNAME"
 )
+/*@NamedNativeQuery(
+        name = "Employee.retrieveEmployeeByLetters",
+        query = "SELECT * FORM EMPLOYEES WHERE LASTNAME LIKE '%' :CHARS '%'",
+        resultClass = Employee.class
+)*/
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {

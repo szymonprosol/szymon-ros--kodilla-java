@@ -11,6 +11,11 @@ import java.util.List;
         query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE :CHARS '%'",
         resultClass = Company.class
 )
+/*@NamedNativeQuery(
+        name = "Company.retrieveCompanyByLetters",
+        query = "SELECT * FORM COMPANIES WHERE COMPANY_NAME LIKE '%' :CHARS '%'",
+        resultClass = Company.class
+)*/
 @Entity
 @Table(name = "COMPANIES")
 public class Company {

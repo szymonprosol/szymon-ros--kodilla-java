@@ -1,8 +1,5 @@
 package com.kodilla.patterns2.observer.homework;
 
-import com.kodilla.patterns2.observer.forum.ForumTopic;
-import com.kodilla.patterns2.observer.forum.Observer;
-
 public class Mentor implements TasksObserver {
     private final String username;
     private int updateCount;
@@ -12,9 +9,9 @@ public class Mentor implements TasksObserver {
     }
 
     @Override
-    public void update(TasksQueue tasksQueue) {
-        System.out.println(username + ": New tasks from the student " + tasksQueue.getName() + "\n" +
-                " (total: " + tasksQueue.getTasks().size() + " tasks)");
+    public void update(KodillaUser kodillaUser) {
+        System.out.println(username + ": New tasks from the student " + kodillaUser.getName() + "\n" +
+                " (total: " + kodillaUser.getTasks().size() + " tasks)");
         updateCount++;
     }
 

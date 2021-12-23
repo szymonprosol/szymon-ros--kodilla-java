@@ -3,12 +3,12 @@ package com.kodilla.patterns2.observer.homework;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TasksQueue implements TasksObservable {
+public class KodillaUser implements TasksObservable {
     private TasksObserver observer;
     private final List<String> tasks;
     private final String name;
 
-    public TasksQueue(String name) {
+    public KodillaUser(String name) {
         tasks = new ArrayList<>();
         this.name = name;
     }

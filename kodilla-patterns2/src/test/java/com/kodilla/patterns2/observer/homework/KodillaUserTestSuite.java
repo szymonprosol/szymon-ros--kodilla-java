@@ -1,21 +1,17 @@
 package com.kodilla.patterns2.observer.homework;
 
-import com.kodilla.patterns2.observer.forum.ForumTopic;
-import com.kodilla.patterns2.observer.forum.ForumUser;
-import com.kodilla.patterns2.observer.forum.JavaHelpForumTopic;
-import com.kodilla.patterns2.observer.forum.JavaToolsForumTopic;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TasksQueueTestSuite {
+public class KodillaUserTestSuite {
 
     @Test
     public void testUpdate() {
         // Given
-        TasksQueue kodillaUser1 = new KodillaUser1();
-        TasksQueue kodillaUser2 = new KodillaUser2();
-        TasksQueue kodillaUser3 = new KodillaUser3();
+        KodillaUser kodillaUser1 = new KodillaUser("Dominik Czarnecki");
+        KodillaUser kodillaUser2 = new KodillaUser("Patrycja Nowak");
+        KodillaUser kodillaUser3 = new KodillaUser("Cezary Kowalski");
         Mentor johnSmith = new Mentor("John Smith");
         Mentor ivoneEscobar= new Mentor("Ivone Escobar");
         Mentor jessiePinkman = new Mentor("Jessie Pinkman");

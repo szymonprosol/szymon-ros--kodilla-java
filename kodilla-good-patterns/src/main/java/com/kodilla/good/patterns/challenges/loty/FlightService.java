@@ -32,8 +32,6 @@ public class FlightService {
                             .map(b -> b.getAirportName()))
                     .filter(c -> c != flightRequest.getDestinationAirport())
                     .forEach(System.out::println);
-        } else if (flightRequest.getDepartureAirport() == null && !flightRequest.isDirectFlight()) {
-
         }
     }
 }

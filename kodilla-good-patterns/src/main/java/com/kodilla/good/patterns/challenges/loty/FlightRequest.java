@@ -5,11 +5,13 @@ public class FlightRequest {
     private Client client;
     private String destinationAirport;
     private String departureAirport;
+    private boolean directFlight;
 
-    public FlightRequest(Client client, String destinationAirport, String departureAirport) {
+    public FlightRequest(Client client, String destinationAirport, String departureAirport, boolean directFlight) {
         this.client = client;
         this.destinationAirport = destinationAirport;
         this.departureAirport = departureAirport;
+        this.directFlight = directFlight;
     }
 
     public Client getClient() {
@@ -23,4 +25,6 @@ public class FlightRequest {
     public String getDepartureAirport() {
         return departureAirport;
     }
+
+    public boolean isDirectFlight() { return directFlight; }
 }

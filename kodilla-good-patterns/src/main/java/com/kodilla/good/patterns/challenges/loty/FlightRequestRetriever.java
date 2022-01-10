@@ -10,6 +10,8 @@ public class FlightRequestRetriever {
 
         String departureAirport = null;
 
-        return new FlightRequest(client,destinationAirport,departureAirport);
+        boolean directFlight = false;
+
+        return new FlightRequest(client,destinationAirport,departureAirport,directFlight);
     }
 }

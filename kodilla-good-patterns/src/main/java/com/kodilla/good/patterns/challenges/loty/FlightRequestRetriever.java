@@ -8,7 +8,7 @@ public class FlightRequestRetriever {
 
         String destinationAirport = "Modlin";
 
-        String departureAirport = null;
+        String departureAirport = "Poznań Ławica";
 
         boolean directFlight = false;
 

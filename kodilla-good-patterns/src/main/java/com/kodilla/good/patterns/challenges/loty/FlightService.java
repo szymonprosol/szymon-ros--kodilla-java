@@ -1,37 +1,45 @@
 package com.kodilla.good.patterns.challenges.loty;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class FlightService {
 
-    private final FlightRequest flightRequest;
     private List<Airport> airports = new FlightHolder().createAirports();
 
-    public FlightService(FlightRequest flightRequest) {
-        this.flightRequest = flightRequest;
+    public void printFlightsFromDepartureAirport(String departureAirportName){
+        Airport departureAirport = airports.stream()
+                .filter(airport -> airport.getAirportName().equals(departureAirportName))
+                .findAny().orElseThrow();
+
+        System.out.println("From airport in " + departureAirportName + " you can fly to: ");
+        departureAirport.getDestinationAirports().stream()
+                .map(airport -> airport.getAirportName())
+                .forEach(airport -> System.out.println(airport));
     }
 
-    public void posibleFlight() {
+    public void printFlightsToAirport(String arrivalAirportName) {
+        Airport arrivalAirport =  airports.stream()
+                .filter(airport -> airport.getAirportName().equals(arrivalAirportName))
+                .findAny().orElseThrow();
 
-        if (flightRequest.getDepartureAirport() == null && flightRequest.getDestinationAirport() == null) {
+        System.out.println("To airport in " + arrivalAirportName + " you can fly from: ");
+        airports.stream()
+                .filter(airport -> airport.getDestinationAirports().contains(arrivalAirport))
+                .forEach(airport -> System.out.println(airport));
+    }
 
-            System.out.println("Brak możliwoci wyszukania lotów");
-        } else if (flightRequest.getDestinationAirport() == null) {
+    public void printInterchangeAirports(String departureAirportName, String arrivalAirportName){
 
-            airports.stream()
-                    .filter(airport -> airport.getAirportName() == flightRequest.getDepartureAirport())
-                    .map(airport -> airport.getDestinationAirports())
-                    .flatMap(a -> a.stream()
-                            .map(b -> b.getAirportName())).forEach(System.out::println);
-        } else if (flightRequest.getDepartureAirport() == null && flightRequest.isDirectFlight()) {
+        Airport departureAirport = airports.stream()
+                .filter(airport -> airport.getAirportName().equals(departureAirportName))
+                .findAny().orElseThrow();
+        Airport arrivalAirport =  airports.stream()
+                .filter(airport -> airport.getAirportName().equals(arrivalAirportName))
+                .findAny().orElseThrow();
 
-            airports.stream()
-                    .map(a -> a.getDestinationAirports())
-                    .flatMap(a -> a.stream()
-                            .map(b -> b.getAirportName()))
-                    .filter(c -> c != flightRequest.getDestinationAirport())
-                    .forEach(System.out::println);
-        }
+        System.out.println("You can fly to " + arrivalAirportName + " from " + departureAirportName + " with a transfer: ");
+        departureAirport.getDestinationAirports().stream()
+                .filter(airport -> airport.getDestinationAirports().contains(arrivalAirport))
+                .forEach(airport -> System.out.println("Departure: "+departureAirportName+", interchange: "+airport.getAirportName()+", arrival: "+arrivalAirportName));
     }
 }

@@ -30,11 +30,30 @@ public class Airport {
     public void setDestinationAirports(List<Airport> airports) {
         List<Airport> tempAirports = new ArrayList<>();
 
-        for (Airport airport1 : airports) {
-            if(airportName != airport1.getAirportName()) {
-                tempAirports.add(airport1);
+        for (Airport airport : airports) {
+            if(airportName != airport.getAirportName()) {
+                tempAirports.add(airport);
             }
         }
         destinationAirports = tempAirports;
+    }
+
+    @Override public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+
+        Airport airport = (Airport) o;
+
+        return airportName != null ? airportName.equals(airport.airportName) : airport.airportName == null;
+    }
+
+    @Override public int hashCode() {
+        return airportName != null ? airportName.hashCode() : 0;
+    }
+
+    @Override public String toString() {
+        return "AirportName = " + airportName;
     }
 }
